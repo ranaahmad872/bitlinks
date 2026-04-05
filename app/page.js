@@ -1,6 +1,7 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import Link from "next/link";
+
 const poppins = localFont({
   src: "./font/Poppins-ExtraBold.ttf",
   variable: "--font-poppins",
@@ -9,25 +10,42 @@ const poppins = localFont({
 
 export default function Home() {
   return (
-    <main className="bg-purple-100">
-      <section className="grid grid-cols-2 h-[50vh]">
-        <div className="flex flex-col gap-4 justify-center items-center">
-          <p className={`text-3xl font-bold ${poppins.className}`}>
+    <main className="bg-purple-50 min-h-screen">
+      <section className="grid grid-cols-1 md:grid-cols-2 h-screen md:h-[70vh] items-center px-8 md:px-16">
+        
+        {/* Left Content */}
+        <div className="flex flex-col gap-6 justify-center items-center md:items-start text-center md:text-left">
+          <h1 className={`text-4xl md:text-6xl font-extrabold text-purple-900 leading-tight ${poppins.className}`}>
             The best URL shortener in the Market
+          </h1>
+          <p className="max-w-lg text-gray-600 text-lg">
+            We are the most straightforward URL Shortener in the world. No tracking, 
+            no forced logins—just fast, clean links designed for your privacy.
           </p>
-          <p className="px-56 text-center">
-            We are the most straightfoward URL Shortener in the world. Most of
-            the url shorteners will track you or ask you to give your details
-            for login. We understand your needs and hence we have created this
-            URL shortener
-          </p>
-          <div className='flex gap-4 justify-start'>
-          <Link href="/shorten"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold text-white'>Try Now</button></Link>
-          <Link href="/github"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold text-white'>GitHub</button></Link>
+          
+          <div className='flex gap-4'>
+            <Link href="/shorten">
+              <button className='bg-purple-600 hover:bg-purple-700 transition-all rounded-full px-8 py-3 font-bold text-white shadow-md'>
+                Try Now
+              </button>
+            </Link>
+            <Link href="/github">
+              <button className='bg-white border border-purple-200 hover:bg-purple-50 transition-all rounded-full px-8 py-3 font-bold text-purple-600 shadow-sm'>
+                GitHub
+              </button>
+            </Link>
+          </div>
         </div>
-        </div>
-        <div className="flex justify-start relative">
-           <Image className="mix-blend-darken" alt="an Image of a vector" src={"/vector.jpg"} fill={true}    />
+
+        {/* Right Image */}
+        <div className="hidden md:flex justify-center relative w-full h-full">
+           <Image 
+             className="mix-blend-darken object-contain" 
+             alt="Vector Illustration" 
+             src="/vector.jpg" 
+             fill={true}
+             priority 
+           />
         </div>
       </section>
     </main>
