@@ -9,7 +9,7 @@ export default function Contact() {
           Let&apos;s Connect
         </h1>
         <p className="text-gray-600 text-lg mb-12">
-          Pick your favorite platform!
+        WOW  Pick your favorite platform!
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
